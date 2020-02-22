@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">GFTastyNoms</string>
+    <string name="find_tasty_gf_noms">Find Tasty GF Noms</string>
+    <string name="go_to_all_tasty_noms">Go To All Tasty Noms</string>
 </resources>
