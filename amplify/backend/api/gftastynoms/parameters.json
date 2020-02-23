@@ -1,0 +1,5 @@
+{
+    "AppSyncApiName": "gftastynoms",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": "false"
+}

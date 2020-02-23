@@ -1,0 +1,28 @@
+# this is an auto generated file. This will be overwritten
+query GetGfTastyNoms($id: ID!) {
+  getGFTastyNoms(id: $id) {
+    id
+    nomplacename
+    address
+    gfmenu
+    dedicatedgf
+    gffriendlyrange
+  }
+}
+query ListGfTastyNomss(
+  $filter: ModelGFTastyNomsFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listGFTastyNomss(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      nomplacename
+      address
+      gfmenu
+      dedicatedgf
+      gffriendlyrange
+    }
+    nextToken
+  }
+}

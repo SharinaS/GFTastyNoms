@@ -1,0 +1,8 @@
+type GFTastyNoms @model {
+  id: ID!
+  nomplacename: String!
+  address: String
+  gfmenu: Boolean
+  dedicatedgf: Boolean
+  gffriendlyrange: Int
+}

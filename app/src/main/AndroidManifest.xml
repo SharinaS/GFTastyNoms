@@ -19,7 +19,7 @@
         android:theme="@style/AppTheme">
         <!-- AWS Amplify setup -->
         <service android:name="org.eclipse.paho.android.service.MqttService" />
-        <!-- end setup --> 
+        <!-- end setup -->
         <activity android:name=".AddNewTastyNomLocation"></activity>
         <activity android:name=".AllTastyNoms" />
 
