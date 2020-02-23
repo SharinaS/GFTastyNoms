@@ -1,0 +1,31 @@
+# this is an auto generated file. This will be overwritten
+mutation CreateGfTastyNoms($input: CreateGFTastyNomsInput!) {
+  createGFTastyNoms(input: $input) {
+    id
+    nomplacename
+    address
+    gfmenu
+    dedicatedgf
+    gffriendlyrange
+  }
+}
+mutation UpdateGfTastyNoms($input: UpdateGFTastyNomsInput!) {
+  updateGFTastyNoms(input: $input) {
+    id
+    nomplacename
+    address
+    gfmenu
+    dedicatedgf
+    gffriendlyrange
+  }
+}
+mutation DeleteGfTastyNoms($input: DeleteGFTastyNomsInput!) {
+  deleteGFTastyNoms(input: $input) {
+    id
+    nomplacename
+    address
+    gfmenu
+    dedicatedgf
+    gffriendlyrange
+  }
+}

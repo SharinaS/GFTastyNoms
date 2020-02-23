@@ -1,0 +1,31 @@
+# this is an auto generated file. This will be overwritten
+subscription OnCreateGfTastyNoms {
+  onCreateGFTastyNoms {
+    id
+    nomplacename
+    address
+    gfmenu
+    dedicatedgf
+    gffriendlyrange
+  }
+}
+subscription OnUpdateGfTastyNoms {
+  onUpdateGFTastyNoms {
+    id
+    nomplacename
+    address
+    gfmenu
+    dedicatedgf
+    gffriendlyrange
+  }
+}
+subscription OnDeleteGfTastyNoms {
+  onDeleteGFTastyNoms {
+    id
+    nomplacename
+    address
+    gfmenu
+    dedicatedgf
+    gffriendlyrange
+  }
+}
