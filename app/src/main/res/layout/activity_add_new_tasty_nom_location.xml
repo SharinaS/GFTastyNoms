@@ -35,4 +35,34 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/goToAllNomPlacesFromAddNewPlace" />
 
+    <EditText
+        android:id="@+id/businessAddressInput"
+        android:layout_width="382dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="4dp"
+        android:ems="10"
+        android:hint="@string/business_address"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/businessNameInput" />
+
+    <EditText
+        android:id="@+id/businessNameInput"
+        android:layout_width="378dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="4dp"
+        android:ems="10"
+        android:hint="@string/business_name"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/goToMainActivityFromAddNewLocation" />
+
+    <Button
+        android:id="@+id/addBusinessDataButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/businessAddressInput" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

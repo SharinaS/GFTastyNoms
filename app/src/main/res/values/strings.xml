@@ -6,4 +6,8 @@
     <string name="all_tasty_noms">All Tasty Noms</string>
     <string name="home">Home</string>
     <string name="all_gf_nom_places">All GF Nom Places</string>
+    <string name="business_name">Business Name</string>
+    <string name="gf_tasty_nom_address">GF Tasty Nom Address</string>
+    <string name="business_address">Business Address</string>
+    <string name="add">Add</string>
 </resources>
