@@ -29,3 +29,6 @@ type GFTastyNoms @model {
   gffriendlyrange: Int
 }
 ```
+
+# Stretch Goals
+* Put data inputted into DynamoDB into a local Room DB
