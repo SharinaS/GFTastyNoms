@@ -10,4 +10,5 @@
     <string name="gf_tasty_nom_address">GF Tasty Nom Address</string>
     <string name="business_address">Business Address</string>
     <string name="add">Add</string>
+    <string name="select_image">Select Image</string>
 </resources>

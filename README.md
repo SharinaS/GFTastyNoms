@@ -10,12 +10,20 @@
 
 ## AWS Services Used
 * Amplify Framework 2.0
+* API, GraphQL, DynamoDB
 
-### AWS Services Automatically Added via Amplify
+### AWS Services added during Amplify Setup
 * S3 Bucket
 * IAM
 * CloudWatch
 * AWS AppSync
+
+## App Functionality
+* User is able to view various pages to the app
+  * home
+  * All GF eateries currently in the DB
+  * A Page that allows the addition of a GF eatery to the DB
+  * Ability to add an image associated with a GF location from their phone.
 
 ## DynamoDB
 ### Schema
