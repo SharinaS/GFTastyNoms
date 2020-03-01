@@ -9,6 +9,11 @@
             "UnauthRoleName": "amplify-gftastynoms-gfnomsenv-173819-unauthRole",
             "StackName": "amplify-gftastynoms-gfnomsenv-173819",
             "StackId": "arn:aws:cloudformation:us-west-2:788412127273:stack/amplify-gftastynoms-gfnomsenv-173819/2c161700-55dd-11ea-a49b-06ce7351dd4e"
+        },
+        "categories": {
+            "auth": {
+                "gftastynomsd65cba56": {}
+            }
         }
     }
 }

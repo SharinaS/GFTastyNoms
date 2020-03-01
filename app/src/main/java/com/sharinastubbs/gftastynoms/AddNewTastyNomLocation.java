@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import com.amazonaws.amplify.generated.graphql.CreateGfTastyNomsMutation;
 import com.amazonaws.mobile.config.AWSConfiguration;
 import com.amazonaws.mobileconnectors.appsync.AWSAppSyncClient;
+import com.amazonaws.mobileconnectors.s3.transferutility.TransferService;
 import com.apollographql.apollo.GraphQLCall;
 import com.apollographql.apollo.api.Response;
 import com.apollographql.apollo.exception.ApolloException;
@@ -37,6 +38,9 @@ public class AddNewTastyNomLocation extends AppCompatActivity {
         setContentView(R.layout.activity_add_new_tasty_nom_location);
 
         Log.i(TAG, "in AddNewTastyNomLocation");
+
+        // ============ AWS S3 Setup to start TransferUtility ============
+        getApplicationContext().startService(new Intent(getApplicationContext(), TransferService.class));
 
         // ============ More Setup To Communicate with AWS Within This Class ============
         myAWSAppSyncClient = AWSAppSyncClient.builder()
@@ -152,19 +156,6 @@ public class AddNewTastyNomLocation extends AppCompatActivity {
 
             // change the image currently on the xml view and replace with URI of new image
             imageView.setImageURI(selectedImage);
-
-
-//            String[] filePathColumn = {MediaStore.Images.Media.DATA};
-//
-//            Cursor cursor = getContentResolver().query(selectedImage,
-//                    filePathColumn, null, null, null);
-//            cursor.moveToFirst();
-//
-//            int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-//            String picturePath = cursor.getString(columnIndex);
-//            cursor.close();
-
-            // String picturePath contains the path of selected Image
         }
     }
 }
