@@ -19,27 +19,28 @@
         android:id="@+id/goToAllNomPlacesFromAddNewPlace"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="12dp"
         android:text="@string/all_gf_nom_places"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addNewTastyNomPageTitle" />
+        app:layout_constraintHorizontal_bias="0.77"
+        app:layout_constraintStart_toEndOf="@+id/goToMainActivityFromAddNewLocation"
+        app:layout_constraintTop_toBottomOf="@+id/addBusinessDataButton" />
 
     <Button
         android:id="@+id/goToMainActivityFromAddNewLocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="12dp"
         android:text="@string/home"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/goToAllNomPlacesFromAddNewPlace" />
+        app:layout_constraintTop_toBottomOf="@+id/addBusinessDataButton" />
 
     <EditText
         android:id="@+id/businessAddressInput"
-        android:layout_width="382dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="4dp"
+        android:layout_width="379dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="16dp"
         android:ems="10"
         android:hint="@string/business_address"
         android:inputType="textPersonName"
@@ -50,19 +51,44 @@
         android:id="@+id/businessNameInput"
         android:layout_width="378dp"
         android:layout_height="53dp"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="16dp"
         android:ems="10"
         android:hint="@string/business_name"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/goToMainActivityFromAddNewLocation" />
+        app:layout_constraintTop_toBottomOf="@+id/addNewTastyNomPageTitle" />
 
     <Button
         android:id="@+id/addBusinessDataButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/add"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/businessAddressInput" />
+        app:layout_constraintTop_toBottomOf="@+id/filePickerButton" />
+
+    <Button
+        android:id="@+id/filePickerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:onClick="pickImage"
+        android:text="@string/select_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/businessAddressInput"
+        app:srcCompat="@android:drawable/sym_def_app_icon" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

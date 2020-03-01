@@ -3,11 +3,14 @@ package com.sharinastubbs.gftastynoms;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.amazonaws.amplify.generated.graphql.CreateGfTastyNomsMutation;
 import com.amazonaws.mobile.config.AWSConfiguration;
@@ -41,12 +44,13 @@ public class AddNewTastyNomLocation extends AppCompatActivity {
                 .awsConfiguration(new AWSConfiguration(getApplicationContext()))
                 .build();
 
-        // ============ Buttons To Go Places ============
+        // ============ Buttons that Go Places ============
         Button goToAllLocations = findViewById(R.id.goToAllNomPlacesFromAddNewPlace);
         goToAllLocations.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent goToAllLocationsWithIntent = new Intent(AddNewTastyNomLocation.this, AllTastyNoms.class);
+                Intent goToAllLocationsWithIntent = new Intent(
+                        AddNewTastyNomLocation.this, AllTastyNoms.class);
                 AddNewTastyNomLocation.this.startActivity(goToAllLocationsWithIntent);
             }
         });
@@ -55,23 +59,24 @@ public class AddNewTastyNomLocation extends AppCompatActivity {
         goToMainActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent goToMainActivityWithIntent = new Intent(AddNewTastyNomLocation.this, MainActivity.class);
+                Intent goToMainActivityWithIntent = new Intent(
+                        AddNewTastyNomLocation.this, MainActivity.class);
                 AddNewTastyNomLocation.this.startActivity(goToMainActivityWithIntent);
             }
         });
 
         Button addNewBusinessData = findViewById(R.id.addBusinessDataButton);
         addNewBusinessData.setOnClickListener(new View.OnClickListener(){
-
             @Override
             public void onClick(View v) {
                 //TODO: Make text appear saying "Submitted!" on view.
                 getBusinessName(v);
             }
         });
-    } // <----- End of onCreate()
+    } // <--------------- End of onCreate()
 
-    // ============ Grab and Save Data User Wants to Save (from AddNewTastyNomLocation Activity) ============
+
+    // ============ Grab & Save Data that the User Wants to Add to AWS' DynamoDB ============
 
     public void getBusinessName(View v) {
         // get business name and make into a usable string
@@ -100,18 +105,66 @@ public class AddNewTastyNomLocation extends AppCompatActivity {
         myAWSAppSyncClient.mutate(CreateGfTastyNomsMutation.builder().input(businessInput).build())
                 .enqueue(new GraphQLCall.Callback<CreateGfTastyNomsMutation.Data>() {
                     @Override
-                    public void onResponse(@Nonnull Response<CreateGfTastyNomsMutation.Data> response) {
+                    public void onResponse(
+                            @Nonnull Response<CreateGfTastyNomsMutation.Data> response) {
                         Log.i(TAG, response.data().toString());
                     }
 
                     @Override
                     public void onFailure(@Nonnull ApolloException e) {
-                        Log.w(TAG, "failure");
+                        Log.w(TAG, "failure in adding data to dynamoDB");
                     }
                 }
         );
+    }
 
 
+    // ============ Select Image From Phone ============
 
+    // --- Select Image from Phone ---
+    // starting code from viralpatel.net/pick-image-from-galaxy-android-app/
+
+    public void pickImage(View v) {
+        // Test button - in xml file, onClick in Common Attributes is set to "pickImage"
+        Log.i(TAG, "The Select-Image button clicked!");
+
+        // trigger an intent to go pick image in the phone and get URI
+        Intent intent = new Intent(
+                Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        // requestCode is created by developer
+        startActivityForResult(intent, 777);
+    }
+
+    // --- Handle Data the User Picked from the Phone ---
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        // when activity finishes, the requestCode, resultCode and data will be supplied to the developer
+        // requestCode allows us to check if code is 777 or something else.
+
+        if (requestCode == 777 && resultCode == RESULT_OK && null != data) {
+            // get the URI for the image
+            Uri selectedImage = data.getData();
+
+            // grab the info where we should put the selected image from the xml file
+            ImageView imageView = findViewById(R.id.imageView);
+
+            // change the image currently on the xml view and replace with URI of new image
+            imageView.setImageURI(selectedImage);
+
+
+//            String[] filePathColumn = {MediaStore.Images.Media.DATA};
+//
+//            Cursor cursor = getContentResolver().query(selectedImage,
+//                    filePathColumn, null, null, null);
+//            cursor.moveToFirst();
+//
+//            int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+//            String picturePath = cursor.getString(columnIndex);
+//            cursor.close();
+
+            // String picturePath contains the path of selected Image
+        }
     }
 }

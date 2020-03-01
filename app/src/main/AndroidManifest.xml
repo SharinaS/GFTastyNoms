@@ -22,7 +22,6 @@
         <!-- end setup -->
         <activity android:name=".AddNewTastyNomLocation"></activity>
         <activity android:name=".AllTastyNoms" />
-
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
