@@ -15,7 +15,8 @@
 AWS Services Added Automatically During Amplify Setup:
 * S3 Bucket
 * IAM
-* CloudWatch
+* CloudFormation
+  * Automates deployment of S3 and IAM resources
 * AWS AppSync
 
 ## S3
@@ -54,3 +55,34 @@ type GFTastyNoms @model {
 
 # Stretch Goals
 * Put data inputted into DynamoDB into a local Room DB
+
+# Lessons learned
+### Error: `Resource is not in the state stackUpdateComplete`
+
+# Debugging Issues and Steps
+## Upon Trying to Add Storage and Auth together via CLI
+### `The runtime parameter of nodejs8.10 is no longer supported for creating or updating AWS Lambda functions`
+* Updated node with homebrew
+* changed node version to 12.x in
+  * amplify/backend/auth/gftastynomsd65cba56/gftastynomsd65cba56-cloudformation-template.yml
+  * amplify/backend/awscloudformation/nested-cloudformation-stack.yml -- this file, however, gets rewritten everytime amplify push is run, so nodejs reverts back to 8.10. Solution - update command line?
+
+### `Resource is not in the state stackUpdateComplete`
+* Updated Node
+* Updated Amplify CLI - `npm install -g @aws-amplify/cli`
+* Updated NPM when terminal prompted it
+
+### `Cannot read property 'awscloudformation' of undefined`
+* Updated API key - `amplify update api`
+* To see all environments: `amplify env list [–details] [–json]`
+* Removed environment - `amplify env remove gfnomsenv`
+* `npm install -g @aws-amplify/cli`
+* Created new environment - `amplify env add`
+* `amplify add api`, but was then informed by the terminal to write, `amplify update api`, at which point I followed the instructions that followed.
+
+
+### Some of helpful resources used for debugging
+* https://aws-amplify.github.io/docs/cli-toolchain/quickstart#environments--teams
+* https://github.com/aws-amplify/amplify-cli/issues/1269
+* https://github.com/aws-amplify/amplify-cli
+* https://aws-amplify.github.io/docs/sdk/android/start

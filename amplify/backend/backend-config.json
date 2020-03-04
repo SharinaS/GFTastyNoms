@@ -9,8 +9,8 @@
 					"defaultAuthentication": {
 						"authenticationType": "API_KEY",
 						"apiKeyConfig": {
-							"description": "connecting to gftastynoms",
-							"apiKeyExpirationDays": 7
+							"description": "connecting to gfnoms API",
+							"apiKeyExpirationDays": "60"
 						}
 					}
 				}

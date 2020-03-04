@@ -1,10 +1,10 @@
 {
     "identityPoolName": "gftastynomsd65cba56_identitypool_d65cba56",
-    "allowUnauthenticatedIdentities": true,
+    "allowUnauthenticatedIdentities": false,
     "resourceNameTruncated": "gftastd65cba56",
     "userPoolName": "gftastynomsd65cba56_userpool_d65cba56",
     "autoVerifiedAttributes": [
-        "email"
+        "phone_number"
     ],
     "mfaConfiguration": "OFF",
     "mfaTypes": [
@@ -45,5 +45,11 @@
         ]
     },
     "useDefault": "default",
-    "dependsOn": []
+    "dependsOn": [],
+    "triggers": "{}",
+    "hostedUI": false,
+    "parentStack": {
+        "Ref": "AWS::StackId"
+    },
+    "permissions": []
 }

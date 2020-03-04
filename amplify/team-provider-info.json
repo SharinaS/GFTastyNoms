@@ -1,14 +1,15 @@
 {
     "gfnomsenv": {
         "awscloudformation": {
-            "AuthRoleName": "amplify-gftastynoms-gfnomsenv-173819-authRole",
-            "UnauthRoleArn": "arn:aws:iam::788412127273:role/amplify-gftastynoms-gfnomsenv-173819-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::788412127273:role/amplify-gftastynoms-gfnomsenv-173819-authRole",
+            "AuthRoleName": "amplify-gftastynoms-gfnomsenv-202140-authRole",
+            "UnauthRoleArn": "arn:aws:iam::788412127273:role/amplify-gftastynoms-gfnomsenv-202140-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::788412127273:role/amplify-gftastynoms-gfnomsenv-202140-authRole",
             "Region": "us-west-2",
-            "DeploymentBucketName": "amplify-gftastynoms-gfnomsenv-173819-deployment",
-            "UnauthRoleName": "amplify-gftastynoms-gfnomsenv-173819-unauthRole",
-            "StackName": "amplify-gftastynoms-gfnomsenv-173819",
-            "StackId": "arn:aws:cloudformation:us-west-2:788412127273:stack/amplify-gftastynoms-gfnomsenv-173819/2c161700-55dd-11ea-a49b-06ce7351dd4e"
+            "DeploymentBucketName": "amplify-gftastynoms-gfnomsenv-202140-deployment",
+            "UnauthRoleName": "amplify-gftastynoms-gfnomsenv-202140-unauthRole",
+            "StackName": "amplify-gftastynoms-gfnomsenv-202140",
+            "StackId": "arn:aws:cloudformation:us-west-2:788412127273:stack/amplify-gftastynoms-gfnomsenv-202140/a6e2db40-5dcf-11ea-b72a-0270063a5762",
+            "AmplifyAppId": "dbn6q5jrf4wcv"
         },
         "categories": {
             "auth": {
