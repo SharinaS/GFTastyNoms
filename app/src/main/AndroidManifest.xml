@@ -19,7 +19,9 @@
         android:theme="@style/AppTheme">
         <!-- AWS Amplify setup -->
         <service android:name="org.eclipse.paho.android.service.MqttService" />
-        <!-- end setup -->
+        <!-- AWS S3 Storage setup -->
+        <service android:name="com.amazonaws.mobileconnectors.s3.transferutility.TransferService" android:enabled="true" />
+        <!-- ends AWS setup -->
         <activity android:name=".AddNewTastyNomLocation"></activity>
         <activity android:name=".AllTastyNoms" />
         <activity android:name=".MainActivity">
