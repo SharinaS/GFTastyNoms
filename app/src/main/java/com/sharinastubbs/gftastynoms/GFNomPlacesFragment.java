@@ -15,6 +15,8 @@ import android.view.ViewGroup;
 import com.sharinastubbs.gftastynoms.dummy.DummyContent;
 import com.sharinastubbs.gftastynoms.dummy.DummyContent.DummyItem;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -71,7 +73,26 @@ public class GFNomPlacesFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyGFNomPlacesRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+
+            // make a list to hold places
+            List<GFTastyNomPlace> listOfGFTastyNomPlaces = new LinkedList<>();
+            // add a location
+            listOfGFTastyNomPlaces.add(new GFTastyNomPlace(
+                    "Flying Apron",
+                    "4709 California Ave SW, Seattle, WA 98116",
+                    true,
+                    true,
+                    10));
+
+            listOfGFTastyNomPlaces.add(new GFTastyNomPlace(
+                    "Matador",
+                    "4546 California Ave SW, Seattle, WA 98116",
+                    false,
+                    false,
+                    6));
+
+            // populate the recycler view
+            recyclerView.setAdapter(new MyGFNomPlacesRecyclerViewAdapter(listOfGFTastyNomPlaces, null));
         }
         return view;
     }
@@ -83,8 +104,8 @@ public class GFNomPlacesFragment extends Fragment {
         if (context instanceof OnListFragmentInteractionListener) {
             mListener = (OnListFragmentInteractionListener) context;
         } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnListFragmentInteractionListener");
+//            throw new RuntimeException(context.toString()
+//                    + " must implement OnListFragmentInteractionListener");
         }
     }
 

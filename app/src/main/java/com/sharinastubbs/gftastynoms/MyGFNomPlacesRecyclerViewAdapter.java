@@ -2,6 +2,7 @@ package com.sharinastubbs.gftastynoms;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,14 +20,17 @@ import java.util.List;
  */
 public class MyGFNomPlacesRecyclerViewAdapter extends RecyclerView.Adapter<MyGFNomPlacesRecyclerViewAdapter.ViewHolder> {
 
-    private final List<DummyItem> mValues;
+    private static String TAG = "ss.RecyclerViewAdapter";
+
+    private final List<GFTastyNomPlace> mValues;
     private final OnListFragmentInteractionListener mListener;
 
-    public MyGFNomPlacesRecyclerViewAdapter(List<DummyItem> items, OnListFragmentInteractionListener listener) {
+    public MyGFNomPlacesRecyclerViewAdapter(List<GFTastyNomPlace> items, OnListFragmentInteractionListener listener) {
         mValues = items;
         mListener = listener;
     }
 
+    // creates a new view
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
@@ -34,20 +38,21 @@ public class MyGFNomPlacesRecyclerViewAdapter extends RecyclerView.Adapter<MyGFN
         return new ViewHolder(view);
     }
 
+    // Given the holder and the position index, fill in that view with the right data for that position.
+    // This is where the data fills into the row so that data can be displayed.
+
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        holder.mIdView.setText(mValues.get(position).id);
-        holder.mContentView.setText(mValues.get(position).content);
+        // use getters from the GFNomPlace class. Note that if you use setText, you have to pass in a String.
+        // If you have an int to pass in, you can do: ("" + mValues.get(position)....).
+        holder.mNomPlaceNameView.setText(mValues.get(position).getNomplacename());
+        holder.mAddressView.setText(mValues.get(position).getAddress());
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (null != mListener) {
-                    // Notify the active callbacks interface (the activity, if the
-                    // fragment is attached to one) that an item has been selected.
-                    mListener.onListFragmentInteraction(holder.mItem);
-                }
+                Log.i(TAG, "it was clicked!");
             }
         });
     }
@@ -59,20 +64,20 @@ public class MyGFNomPlacesRecyclerViewAdapter extends RecyclerView.Adapter<MyGFN
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
-        public final TextView mIdView;
-        public final TextView mContentView;
-        public DummyItem mItem;
+        public final TextView mNomPlaceNameView;
+        public final TextView mAddressView;
+        public GFTastyNomPlace mItem;
 
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            mIdView = (TextView) view.findViewById(R.id.item_number);
-            mContentView = (TextView) view.findViewById(R.id.content);
+            mNomPlaceNameView = (TextView) view.findViewById(R.id.placeName);
+            mAddressView = (TextView) view.findViewById(R.id.placeAddress);
         }
 
         @Override
         public String toString() {
-            return super.toString() + " '" + mContentView.getText() + "'";
+            return super.toString() + " '" + mAddressView.getText() + "'";
         }
     }
 }
