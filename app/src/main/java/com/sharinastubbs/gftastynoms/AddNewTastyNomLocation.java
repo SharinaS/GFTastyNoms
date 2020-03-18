@@ -66,7 +66,6 @@ public class AddNewTastyNomLocation extends AppCompatActivity {
             @Override
             public void onResult(UserStateDetails userStateDetails) {
                 Log.i(TAG, "AWSMobileClient initialized. User State is " + userStateDetails.getUserState());
-
                 uploadWithTransferUtility();
             }
 
