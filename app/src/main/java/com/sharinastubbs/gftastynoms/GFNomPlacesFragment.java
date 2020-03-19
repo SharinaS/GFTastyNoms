@@ -12,10 +12,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.sharinastubbs.gftastynoms.dummy.DummyContent;
-import com.sharinastubbs.gftastynoms.dummy.DummyContent.DummyItem;
-
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -127,6 +123,6 @@ public class GFNomPlacesFragment extends Fragment {
      */
     public interface OnListFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onListFragmentInteraction(DummyItem item);
+//        void onListFragmentInteraction(DummyItem item);
     }
 }

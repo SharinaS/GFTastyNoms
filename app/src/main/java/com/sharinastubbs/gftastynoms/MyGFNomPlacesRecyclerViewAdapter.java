@@ -9,14 +9,10 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.sharinastubbs.gftastynoms.GFNomPlacesFragment.OnListFragmentInteractionListener;
-import com.sharinastubbs.gftastynoms.dummy.DummyContent.DummyItem;
 
 import java.util.List;
 
-/**
- * {@link RecyclerView.Adapter} that can display a {@link DummyItem} and makes a call to the
- * specified {@link OnListFragmentInteractionListener}.
- */
+
 public class MyGFNomPlacesRecyclerViewAdapter extends RecyclerView.Adapter<MyGFNomPlacesRecyclerViewAdapter.ViewHolder> {
 
     private static String TAG = "ss.RecyclerViewAdapter";

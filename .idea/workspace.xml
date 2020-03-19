@@ -7,7 +7,7 @@
   </component>
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a18090d-fa5f-4dc7-b652-42805b70b9d7" name="Default Changelist" comment="">
@@ -18,10 +18,10 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sharinastubbs/gftastynoms/AllTastyNoms.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sharinastubbs/gftastynoms/AllTastyNoms.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sharinastubbs/gftastynoms/GFTastyNomPlace.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sharinastubbs/gftastynoms/GFTastyNomPlace.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sharinastubbs/gftastynoms/GFNomPlacesFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sharinastubbs/gftastynoms/GFNomPlacesFragment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sharinastubbs/gftastynoms/MyGFNomPlacesRecyclerViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sharinastubbs/gftastynoms/MyGFNomPlacesRecyclerViewAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_gfnomplaces.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_gfnomplaces.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sharinastubbs/gftastynoms/dummy/DummyContent.java" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,11 +52,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sharinastubbs/gftastynoms/GFNomPlacesFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="88" column="25" lean-forward="true" selection-start-line="88" selection-start-column="25" selection-end-line="88" selection-end-column="62" />
+            <state relative-caret-position="214">
+              <caret line="113" selection-start-line="113" selection-end-line="113" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -70,23 +73,15 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sharinastubbs/gftastynoms/MyGFNomPlacesRecyclerViewAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="930">
-              <caret line="73" column="41" selection-start-line="73" selection-start-column="41" selection-end-line="73" selection-end-column="41" />
+            <state relative-caret-position="197">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="e#1849#1989#0" expanded="true" />
                 <element signature="e#1988#1989#0" expanded="true" />
                 <element signature="e#2063#2064#0" expanded="true" />
                 <element signature="e#2100#2101#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sharinastubbs/gftastynoms/dummy/DummyContent.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-637">
-              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -139,8 +134,8 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/sharinastubbs/gftastynoms/AllTastyNoms.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/sharinastubbs/gftastynoms/GFTastyNomPlace.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_gfnomplaces.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/sharinastubbs/gftastynoms/GFNomPlacesFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/sharinastubbs/gftastynoms/MyGFNomPlacesRecyclerViewAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sharinastubbs/gftastynoms/GFNomPlacesFragment.java" />
       </list>
     </option>
   </component>
@@ -226,16 +221,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="gftastynoms" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GFTastyNoms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GFTastyNoms" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="gftastynoms" type="462c0819:PsiDirectoryNode" />
-              <item name="dummy" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GFTastyNoms" type="b2602c69:ProjectViewProjectNode" />
@@ -388,7 +373,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="724" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.2673667" />
@@ -400,13 +384,13 @@
       <window_info id="Resources Explorer" order="7" />
       <window_info id="Capture Tool" order="8" />
       <window_info anchor="bottom" id="Run" order="0" />
-      <window_info anchor="bottom" id="Logcat" order="1" visible="true" weight="0.41215107" />
+      <window_info anchor="bottom" id="Logcat" order="1" weight="0.32676518" />
       <window_info anchor="bottom" id="TODO" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" />
       <window_info anchor="bottom" id="Terminal" order="4" />
       <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="6" />
-      <window_info anchor="bottom" id="Build" order="7" weight="0.48440066" />
+      <window_info anchor="bottom" id="Build" order="7" visible="true" weight="0.48440066" />
       <window_info anchor="bottom" id="Android Profiler" order="8" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
@@ -631,22 +615,23 @@
       <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sharinastubbs/gftastynoms/GFNomPlacesFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="88" column="25" lean-forward="true" selection-start-line="88" selection-start-column="25" selection-end-line="88" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_all_tasty_noms.xml">
       <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="android-designer2" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sharinastubbs/gftastynoms/dummy/DummyContent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="64" column="9" lean-forward="true" selection-end-line="72" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sharinastubbs/gftastynoms/MyGFNomPlacesRecyclerViewAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="930">
-          <caret line="73" column="41" selection-start-line="73" selection-start-column="41" selection-end-line="73" selection-end-column="41" />
+        <state relative-caret-position="197">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="e#1849#1989#0" expanded="true" />
             <element signature="e#1988#1989#0" expanded="true" />
             <element signature="e#2063#2064#0" expanded="true" />
@@ -655,10 +640,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sharinastubbs/gftastynoms/dummy/DummyContent.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sharinastubbs/gftastynoms/GFNomPlacesFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-637">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        <state relative-caret-position="214">
+          <caret line="113" selection-start-line="113" selection-end-line="113" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
