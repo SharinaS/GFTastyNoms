@@ -17,6 +17,8 @@ public class GFTastyNomPlace {
         this.gffriendlyrange = gffriendlyrange;
     }
 
+    //TODO: Write method that gets average for gffriendlyrange
+
     public String getNomplacename() {
         return nomplacename;
     }

@@ -60,9 +60,6 @@ public class AllTastyNoms extends AppCompatActivity {
         });
     } // <------- end onCreate()
 
-    //TODO: Make recycler view
-    // https://developer.android.com/guide/topics/ui/layout/recyclerview
-    // https://frontrowviews.com/Home/Event/Play/5d76a96cbdb9b10d0cb5cdf7
 
     // ========== Get Data From DynamoDB ==========
     // starting code from aws-amplify.github.io/docs/sdk/android/api
