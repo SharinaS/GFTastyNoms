@@ -1,6 +1,7 @@
 package com.sharinastubbs.gftastynoms;
 
 import android.content.Context;
+import android.nfc.Tag;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,12 +9,27 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.amazonaws.amplify.generated.graphql.GetGfTastyNomsQuery;
+import com.amazonaws.amplify.generated.graphql.ListGfTastyNomssQuery;
+import com.amazonaws.mobile.config.AWSConfiguration;
+import com.amazonaws.mobileconnectors.appsync.AWSAppSyncClient;
+import com.amazonaws.mobileconnectors.appsync.fetcher.AppSyncResponseFetchers;
+import com.apollographql.apollo.GraphQLCall;
+import com.apollographql.apollo.api.Response;
+import com.apollographql.apollo.exception.ApolloException;
+
 import java.util.LinkedList;
 import java.util.List;
+
+import javax.annotation.Nonnull;
 
 /**
  * A fragment representing a list of Items.
@@ -28,6 +44,15 @@ public class GFNomPlacesFragment extends Fragment {
     // TODO: Customize parameters
     private int mColumnCount = 1;
     private OnListFragmentInteractionListener mListener;
+
+    // instance variable for recycler view
+    private RecyclerView recyclerView;
+
+    // Setup AWS functionality within this class
+    private AWSAppSyncClient myAWSAppSyncClient;
+
+    // Setup logging
+    private static String TAG = "ss.GFNomPlacesFragment";
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -63,34 +88,69 @@ public class GFNomPlacesFragment extends Fragment {
         // Set the adapter
         if (view instanceof RecyclerView) {
             Context context = view.getContext();
-            RecyclerView recyclerView = (RecyclerView) view;
+            recyclerView = (RecyclerView) view;
             if (mColumnCount <= 1) {
                 recyclerView.setLayoutManager(new LinearLayoutManager(context));
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
 
-            // make a list to hold places
-            List<GFTastyNomPlace> listOfGFTastyNomPlaces = new LinkedList<>();
-            // add a location
-            listOfGFTastyNomPlaces.add(new GFTastyNomPlace(
-                    "Flying Apron",
-                    "4709 California Ave SW, Seattle, WA 98116",
-                    true,
-                    true,
-                    10));
-
-            listOfGFTastyNomPlaces.add(new GFTastyNomPlace(
-                    "Matador",
-                    "4546 California Ave SW, Seattle, WA 98116",
-                    false,
-                    false,
-                    6));
-
-            // populate the recycler view
-            recyclerView.setAdapter(new MyGFNomPlacesRecyclerViewAdapter(listOfGFTastyNomPlaces, null));
+//            // make a list to hold the different GF locations
+//            List<GFTastyNomPlace> listOfGFTastyNomPlaces = new LinkedList<>();
+//            // add a location
+//            listOfGFTastyNomPlaces.add(new GFTastyNomPlace(
+//                    "Flying Apron",
+//                    "4709 California Ave SW, Seattle, WA 98116",
+//                    true,
+//                    true,
+//                    10));
+//
+//            listOfGFTastyNomPlaces.add(new GFTastyNomPlace(
+//                    "Matador",
+//                    "4546 California Ave SW, Seattle, WA 98116",
+//                    false,
+//                    false,
+//                    6));
+//
+//            // populate the recycler view
+//            recyclerView.setAdapter(new MyGFNomPlacesRecyclerViewAdapter(listOfGFTastyNomPlaces, null));
         }
+
+        // ============ More Setup To Communicate with AWS Within This Class ============
+        myAWSAppSyncClient = AWSAppSyncClient.builder()
+                .context(view.getContext().getApplicationContext())
+                .awsConfiguration(new AWSConfiguration(view.getContext().getApplicationContext()))
+                .build();
         return view;
+    }
+
+    // ====== Access Data in DynamoDB to be Displayed in the Recycler View ======
+    // Note that CACHE_AND_NETWORK don't always get the latest updates, so we just do NETWORK_FIRST.
+    @Override
+    public void onResume() {
+        super.onResume();
+        myAWSAppSyncClient.query(ListGfTastyNomssQuery.builder().build())
+                .responseFetcher(AppSyncResponseFetchers.NETWORK_FIRST)
+                .enqueue(new GraphQLCall.Callback<ListGfTastyNomssQuery.Data>() {
+                    @Override
+                    public void onResponse(@Nonnull final Response<ListGfTastyNomssQuery.Data> response) {
+
+                        // Address threading issues, given callback isn't running on the UI thread
+                        Handler handler = new Handler(Looper.getMainLooper()){
+                            //define how the handler is supposed to work
+                            @Override
+                            public void handleMessage(Message inputMessage) {
+                                recyclerView.setAdapter(new MyGFNomPlacesRecyclerViewAdapter(response.data().listGFTastyNomss().items(), null));
+                            }
+                        };
+                        handler.obtainMessage().sendToTarget();
+                    }
+
+                    @Override
+                    public void onFailure(@Nonnull ApolloException e) {
+                        Log.i(TAG, e.getMessage());
+                    }
+                });
     }
 
 
