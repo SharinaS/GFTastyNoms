@@ -16,7 +16,6 @@ import java.util.List;
 /**
  * {@link RecyclerView.Adapter} that can display a {@link DummyItem} and makes a call to the
  * specified {@link OnListFragmentInteractionListener}.
- * TODO: Replace the implementation with code for your data type.
  */
 public class MyGFNomPlacesRecyclerViewAdapter extends RecyclerView.Adapter<MyGFNomPlacesRecyclerViewAdapter.ViewHolder> {
 
@@ -40,7 +39,6 @@ public class MyGFNomPlacesRecyclerViewAdapter extends RecyclerView.Adapter<MyGFN
 
     // Given the holder and the position index, fill in that view with the right data for that position.
     // This is where the data fills into the row so that data can be displayed.
-
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
@@ -63,14 +61,17 @@ public class MyGFNomPlacesRecyclerViewAdapter extends RecyclerView.Adapter<MyGFN
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+        // Instance variables for the data that shows up on the recycler view to hold the reference to that individual text view.
         public final View mView;
+        public GFTastyNomPlace mItem;
+        // items that appear on the recycler view
         public final TextView mNomPlaceNameView;
         public final TextView mAddressView;
-        public GFTastyNomPlace mItem;
 
         public ViewHolder(View view) {
             super(view);
             mView = view;
+            // grab ids of text TextViews
             mNomPlaceNameView = (TextView) view.findViewById(R.id.placeName);
             mAddressView = (TextView) view.findViewById(R.id.placeAddress);
         }
