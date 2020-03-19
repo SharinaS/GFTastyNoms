@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.amazonaws.amplify.generated.graphql.ListGfTastyNomssQuery;
 import com.sharinastubbs.gftastynoms.GFNomPlacesFragment.OnListFragmentInteractionListener;
 
 import java.util.List;
@@ -17,10 +18,11 @@ public class MyGFNomPlacesRecyclerViewAdapter extends RecyclerView.Adapter<MyGFN
 
     private static String TAG = "ss.RecyclerViewAdapter";
 
-    private final List<GFTastyNomPlace> mValues;
+    private final List<ListGfTastyNomssQuery.Item> mValues;
     private final OnListFragmentInteractionListener mListener;
 
-    public MyGFNomPlacesRecyclerViewAdapter(List<GFTastyNomPlace> items, OnListFragmentInteractionListener listener) {
+    public MyGFNomPlacesRecyclerViewAdapter(List<ListGfTastyNomssQuery.Item> items,
+                                            OnListFragmentInteractionListener listener) {
         mValues = items;
         mListener = listener;
     }
@@ -40,8 +42,8 @@ public class MyGFNomPlacesRecyclerViewAdapter extends RecyclerView.Adapter<MyGFN
         holder.mItem = mValues.get(position);
         // use getters from the GFNomPlace class. Note that if you use setText, you have to pass in a String.
         // If you have an int to pass in, you can do: ("" + mValues.get(position)....).
-        holder.mNomPlaceNameView.setText(mValues.get(position).getNomplacename());
-        holder.mAddressView.setText(mValues.get(position).getAddress());
+        holder.mNomPlaceNameView.setText(mValues.get(position).nomplacename());
+        holder.mAddressView.setText(mValues.get(position).address());
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,7 +61,7 @@ public class MyGFNomPlacesRecyclerViewAdapter extends RecyclerView.Adapter<MyGFN
     public class ViewHolder extends RecyclerView.ViewHolder {
         // Instance variables for the data that shows up on the recycler view to hold the reference to that individual text view.
         public final View mView;
-        public GFTastyNomPlace mItem;
+        public ListGfTastyNomssQuery.Item mItem;
         // items that appear on the recycler view
         public final TextView mNomPlaceNameView;
         public final TextView mAddressView;
